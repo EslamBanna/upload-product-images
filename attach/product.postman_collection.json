@@ -30,13 +30,13 @@
 						},
 						{
 							"key": "product_images[0][image]",
-							"value": "1",
-							"type": "text"
+							"type": "file",
+							"src": "/F:/a.jpg"
 						},
 						{
 							"key": "product_images[1][image]",
-							"value": "2",
-							"type": "text"
+							"type": "file",
+							"src": "/F:/a.jpg"
 						}
 					]
 				},
@@ -49,6 +49,51 @@
 					"path": [
 						"api",
 						"insert-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_name",
+							"value": "test new",
+							"type": "text"
+						},
+						{
+							"key": "product_description",
+							"value": "test test test new",
+							"type": "text"
+						},
+						{
+							"key": "product_images[0][image]",
+							"type": "file",
+							"src": "/E:/WhatsApp Image 2021-09-25 at 1.33.08 AM.jpeg"
+						},
+						{
+							"key": "product_images[1][image]",
+							"type": "file",
+							"src": "/E:/WhatsApp Image 2021-09-25 at 1.33.08 AM.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/update-product/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"update-product",
+						"4"
 					]
 				}
 			},
