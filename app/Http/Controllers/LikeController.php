@@ -26,6 +26,19 @@ class LikeController extends Controller
         }
     }
 
+    public function makeDislike($like_id){
+        try{
+            $like = Like::find($like_id);
+            if(! $like){
+                return $this->returnError(202, 'product not founded');
+            }
+            $like->delete();
+            return $this->returnSuccessMessage('success');
+        }catch(\Exception $e){
+            return $this->returnError(201, $e->getMessage());
+        }
+    }
+
     public function getMyFavorite(){
         try{
             $favorites = Like::with('product')->where('user_id', Auth()->user()->id)->get();

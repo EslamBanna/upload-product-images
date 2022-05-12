@@ -25,4 +25,5 @@ Route::post('/update-product/{product_id}', [ProductController::class, 'updatePr
 
 
 Route::post('make-like/{product_id}', [LikeController::class, 'makeLike']);
+Route::post('make-dislike/{like_id}', [LikeController::class, 'makeDislike']);
 Route::get('get-my-favorite', [LikeController::class, 'getMyFavorite']);
