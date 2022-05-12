@@ -25,4 +25,13 @@ class LikeController extends Controller
             return $this->returnError(201, $e->getMessage());
         }
     }
+
+    public function getMyFavorite(){
+        try{
+            $favorites = Like::with('product')->where('user_id', Auth()->user()->id)->get();
+            return $this->returnData('data', $favorites);
+        }catch(\Exception $e){
+            return $this->returnError(201, $e->getMessage());
+        }
+    }
 }
